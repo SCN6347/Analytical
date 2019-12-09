@@ -1,30 +1,38 @@
 package puzzle.number.patterns;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+
 public class NumberBasedGenerators
 {
 
 	public static void main(String[] args)
 	{
 		NumberBasedGenerators numberBasedGenerators = new NumberBasedGenerators();
-
-
-		numberBasedGenerators.printStarEquilateralTirangle();
-		numberBasedGenerators.printStarInvertedPyramid();
-		numberBasedGenerators.printStarHalfPyramid();
-		numberBasedGenerators.printStarInvertedHalfPyramid();
-		
-		numberBasedGenerators.printNumberPyramid();
-		numberBasedGenerators.printNumberHalfPyramid();
-		numberBasedGenerators.printNumberInvertedHalfPyramid();
-		numberBasedGenerators.printnumbersIncrementalByColumn();
-		
-		numberBasedGenerators.printPascalsTraingle();
-		numberBasedGenerators.printFloydsTriangle();
-		
-		numberBasedGenerators.printAlphabetTriangle();
+		Method methods[] = NumberBasedGenerators.class.getDeclaredMethods();
+		for (Method method : methods)
+		{
+			try
+			{
+				if(method.getName().equals("main")) continue;
+				method.invoke(numberBasedGenerators);
+			}
+			catch (IllegalAccessException e)
+			{
+				e.printStackTrace();
+			}
+			catch (IllegalArgumentException e)
+			{
+				e.printStackTrace();
+			}
+			catch (InvocationTargetException e)
+			{
+				e.printStackTrace();
+			}
+		}
 	}
 
-	private void printAlphabetTriangle()
+	void printAlphabetTriangle()
 	{
 
 		System.out.println("PyramidPattern.printAlphabetTriangle()");
@@ -43,7 +51,7 @@ public class NumberBasedGenerators
 		System.out.println("\n\n*****************************************************************************************\n\n");
 	}
 
-	private void printFloydsTriangle()
+	void printFloydsTriangle()
 	{
 
 		System.out.println("PyramidPattern.printFloydsTriangle()");
@@ -62,7 +70,7 @@ public class NumberBasedGenerators
 		System.out.println("\n\n*****************************************************************************************\n\n");
 	}
 
-	private void printPascalsTraingle()
+	void printPascalsTraingle()
 	{
 
 		System.out.println("PyramidPattern.printPascalsTraingle()");
@@ -85,7 +93,7 @@ public class NumberBasedGenerators
 		System.out.println("\n\n*****************************************************************************************\n\n");
 	}
 
-	private void printNumberHalfPyramid()
+	void printNumberHalfPyramid()
 	{
 
 		System.out.println("PyramidPattern.printNumberHalfPyramid()");
@@ -103,7 +111,7 @@ public class NumberBasedGenerators
 		System.out.println("\n\n*****************************************************************************************\n\n");
 	}
 
-	private void printStarHalfPyramid()
+	void printStarHalfPyramid()
 	{
 
 		System.out.println("PyramidPattern.printHalfPyramid()");
@@ -120,7 +128,7 @@ public class NumberBasedGenerators
 		System.out.println("\n\n*****************************************************************************************\n\n");
 	}
 
-	private void printStarInvertedHalfPyramid()
+	void printStarInvertedHalfPyramid()
 	{
 
 		System.out.println("PyramidPattern.printStarInvertedHalfPyramid()");
@@ -137,7 +145,7 @@ public class NumberBasedGenerators
 		System.out.println("\n\n*****************************************************************************************\n\n");
 	}
 
-	private void printNumberInvertedHalfPyramid()
+	void printNumberInvertedHalfPyramid()
 	{
 
 		System.out.println("PyramidPattern.printInvertedHalfPyramid()");
@@ -153,7 +161,7 @@ public class NumberBasedGenerators
 		System.out.println("\n\n*****************************************************************************************\n\n");
 	}
 
-	private void printStarInvertedPyramid()
+	void printStarInvertedPyramid()
 	{
 
 		System.out.println("PyramidPattern.printInvertedPyramid()");
@@ -175,7 +183,7 @@ public class NumberBasedGenerators
 		System.out.println("\n\n*****************************************************************************************\n\n");
 	}
 
-	private void printNumberPyramid()
+	void printNumberPyramid()
 	{
 		System.out.println("PyramidPattern.printNumberPyramid()");
 		short rows = 6, count1 = 0, count = 0, k = 0;
@@ -208,7 +216,7 @@ public class NumberBasedGenerators
 		System.out.println("\n\n*****************************************************************************************\n\n");
 	}
 
-	private void printStarEquilateralTirangle()
+	void printStarEquilateralTirangle()
 	{
 
 		System.out.println("PyramidPattern.printStarEquilateralTirangle()");
@@ -232,7 +240,7 @@ public class NumberBasedGenerators
 		System.out.println("\n\n*****************************************************************************************\n\n");
 	}
 
-	private void printnumbersIncrementalByColumn()
+	void printnumbersIncrementalByColumn()
 	{
 
 		System.out.println("PyramidPattern.printnumbersIncrementalByColumn()");
