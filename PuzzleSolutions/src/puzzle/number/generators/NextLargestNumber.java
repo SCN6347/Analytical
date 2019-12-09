@@ -42,7 +42,6 @@ public class NextLargestNumber
 			System.out.println("Logic Failed");
 			return;
 		}
-		System.out.println("Swap Position: " + swapPosition + "   Swap Number: " + numArray[swapPosition]);
 		int currentNum = numArray[swapPosition];
 		int nextHighest = Integer.MAX_VALUE;
 		byte nextHighPos = -1;
@@ -70,7 +69,6 @@ public class NextLargestNumber
 		for (int i = 0; i < numArray.length; i++)
 		{
 			numberValue.append(numArray[i]);
-
 		}
 		return Integer.valueOf(numberValue.toString());
 	}
