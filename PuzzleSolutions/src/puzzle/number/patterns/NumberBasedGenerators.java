@@ -3,6 +3,13 @@ package puzzle.number.patterns;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
+/**
+ * ******************************************************************************************************************************************************************
+ * 
+ * @author SCN6347 *
+ ********************************************************************************************************************************************************************
+ */
+
 public class NumberBasedGenerators
 {
 
@@ -14,7 +21,7 @@ public class NumberBasedGenerators
 		{
 			try
 			{
-				if(method.getName().equals("main")) continue;
+				if (method.getName().equals("main")) continue;
 				method.invoke(numberBasedGenerators);
 			}
 			catch (IllegalAccessException e)
