@@ -1,0 +1,1 @@
+This module intends to provide solutions for some puzzles and Analytical Problems.
